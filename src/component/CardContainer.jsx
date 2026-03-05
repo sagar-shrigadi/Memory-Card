@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/cardContainer.css";
 import Card from "./Card";
 export default function CardContainer({ pokemonList }) {
   const [pokemons, setPokemons] = useState([]);
@@ -23,10 +24,10 @@ export default function CardContainer({ pokemonList }) {
   }, [pokemonList]);
 
   return (
-    <>
+    <section className="card-container">
       {pokemons.map((pokemon) => (
         <Card key={pokemon.id} pokemon={pokemon}></Card>
       ))}
-    </>
+    </section>
   );
 }

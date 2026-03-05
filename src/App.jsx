@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./styles/reset.css";
 import "./App.css";
 import CardContainer from "./component/CardContainer";
 

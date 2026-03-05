@@ -1,8 +1,15 @@
+import "../styles/Card.css";
 export default function Card({ pokemon }) {
   return (
     <article className="card">
-      <h2>Name: {pokemon.name}</h2>
-      <img alt={`${pokemon.name}'s Official Artwork`} src={pokemon.pic}></img>
+      <img
+        alt={`${pokemon.name}'s Official Artwork`}
+        src={pokemon.pic}
+        width={275}
+        height={275}
+        className="pokemon-img"
+      ></img>
+      <h2 className="pokemon-name">{pokemon.name}</h2>
     </article>
   );
 }
