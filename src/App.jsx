@@ -9,7 +9,7 @@ function App() {
     const fetchData = async () => {
       try {
         const responce = await fetch(
-          "https://pokeapi.co/api/v2/pokemon?limit=18&offset=0",
+          `https://pokeapi.co/api/v2/pokemon?limit=18&offset=${Math.random() * (1000 - 1) + 1}`,
         );
         const json = await responce.json();
 
