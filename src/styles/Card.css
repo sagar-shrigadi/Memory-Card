@@ -16,7 +16,8 @@
   padding: 10px;
 }
 
-.pokemon-name {
+.pokemon-name,
+p {
   text-transform: capitalize;
   color: #343434;
 }

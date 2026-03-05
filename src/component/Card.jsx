@@ -1,10 +1,15 @@
 import { useState } from "react";
 import "../styles/Card.css";
-export default function Card({ pokemon }) {
-  const [count, setCount] = useState(false);
+export default function Card({ pokemon, shuffleCards }) {
+  const [count, setCount] = useState(0);
 
   function handleClick() {
-    setCount(true);
+    if (count === 0) {
+      setCount((c) => c + 1);
+      shuffleCards();
+    } else {
+      alert("game reset!");
+    }
   }
 
   return (
@@ -17,6 +22,7 @@ export default function Card({ pokemon }) {
         className="pokemon-img"
       ></img>
       <h2 className="pokemon-name">{pokemon.name}</h2>
+      <p>{count}</p>
     </article>
   );
 }

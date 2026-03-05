@@ -23,10 +23,30 @@ export default function CardContainer({ pokemonList }) {
     fetchAll();
   }, [pokemonList]);
 
+  //Fisher-Yates shuffle algorithm for shuffling cards on a click
+  function shuffleCards(array) {
+    const arrayCopy = [...array];
+    for (let i = arrayCopy.length - 1; i > 0; i--) {
+      //generates a random num betwwen i & 1
+      const randomNum = Math.floor(Math.random() * (i + 1));
+
+      // destructing to swap array[i]th element with array[randomNum] element
+      [arrayCopy[i], arrayCopy[randomNum]] = [
+        arrayCopy[randomNum],
+        arrayCopy[i],
+      ];
+    }
+    setPokemons(arrayCopy);
+  }
+
   return (
     <section className="card-container">
       {pokemons.map((pokemon) => (
-        <Card key={pokemon.id} pokemon={pokemon}></Card>
+        <Card
+          key={pokemon.id}
+          pokemon={pokemon}
+          shuffleCards={() => shuffleCards(pokemons)}
+        ></Card>
       ))}
     </section>
   );
