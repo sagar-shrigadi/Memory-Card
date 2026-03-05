@@ -1,7 +1,14 @@
+import { useState } from "react";
 import "../styles/Card.css";
 export default function Card({ pokemon }) {
+  const [count, setCount] = useState(false);
+
+  function handleClick() {
+    setCount(true);
+  }
+
   return (
-    <article className="card">
+    <article className="card" onClick={handleClick}>
       <img
         alt={`${pokemon.name}'s Official Artwork`}
         src={pokemon.pic}
