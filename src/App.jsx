@@ -1,10 +1,22 @@
 import { useState, useEffect } from "react";
 import "./styles/reset.css";
 import "./App.css";
+import Header from "./component/Header";
 import CardContainer from "./component/CardContainer";
 
 function App() {
   const [pokemonUrlList, setPokemonUrlList] = useState([]);
+  const [scoreboard, setScoreboard] = useState({
+    score: 0,
+    highestScore: 0,
+  });
+
+  function updateScore() {
+    setScoreboard({
+      ...scoreboard,
+      score: scoreboard.score + 1,
+    });
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +35,15 @@ function App() {
     fetchData();
   }, []);
   // console.log(pokemonUrlList);
-  return <>{<CardContainer pokemonList={pokemonUrlList}></CardContainer>}</>;
+  return (
+    <main>
+      <Header {...scoreboard}></Header>
+      <CardContainer
+        pokemonList={pokemonUrlList}
+        updateScore={updateScore}
+      ></CardContainer>
+    </main>
+  );
 }
 
 export default App;

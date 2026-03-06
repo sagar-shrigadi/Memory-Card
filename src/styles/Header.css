@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+
+.header {
+  font-family: "DynaPuff", system-ui;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-inline: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.5rem;
+
+  p {
+    color: white;
+    span {
+      margin-right: 0.25em;
+    }
+  }
+}

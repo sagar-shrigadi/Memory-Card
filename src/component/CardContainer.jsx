@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import "../styles/cardContainer.css";
 import Card from "./Card";
-export default function CardContainer({ pokemonList }) {
+export default function CardContainer({ pokemonList, updateScore }) {
   const [pokemons, setPokemons] = useState([]);
   const [clickedIds, setClickedIds] = useState([]);
 
   function handleClick(id) {
     if (!clickedIds.includes(id)) {
       setClickedIds([...clickedIds, id]);
+      updateScore();
       shuffleCards(pokemons);
     } else {
       alert("game reset!");
