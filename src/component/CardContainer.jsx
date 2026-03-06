@@ -3,6 +3,16 @@ import "../styles/cardContainer.css";
 import Card from "./Card";
 export default function CardContainer({ pokemonList }) {
   const [pokemons, setPokemons] = useState([]);
+  const [clickedIds, setClickedIds] = useState([]);
+
+  function handleClick(id) {
+    if (!clickedIds.includes(id)) {
+      setClickedIds([...clickedIds, id]);
+      shuffleCards(pokemons);
+    } else {
+      alert("game reset!");
+    }
+  }
 
   useEffect(() => {
     const fetchAll = async () => {
@@ -45,7 +55,7 @@ export default function CardContainer({ pokemonList }) {
         <Card
           key={pokemon.id}
           pokemon={pokemon}
-          shuffleCards={() => shuffleCards(pokemons)}
+          handleClick={() => handleClick(pokemon.id)}
         ></Card>
       ))}
     </section>
