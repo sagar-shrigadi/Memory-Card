@@ -1,17 +1,29 @@
 import { useState, useEffect } from "react";
 import "../styles/cardContainer.css";
 import Card from "./Card";
-export default function CardContainer({ pokemonList, updateScore }) {
+export default function CardContainer({
+  pokemonList,
+  updateScore,
+  updateHighestScore,
+  gameReset,
+}) {
   const [pokemons, setPokemons] = useState([]);
   const [clickedIds, setClickedIds] = useState([]);
 
   function handleClick(id) {
     if (!clickedIds.includes(id)) {
-      setClickedIds([...clickedIds, id]);
-      updateScore();
-      shuffleCards(pokemons);
+      if (clickedIds.length === pokemons.length - 1) {
+        updateScore();
+        updateHighestScore(clickedIds.length + 1); // add + 1 manually since we know the state doesnt update till next render
+        gameReset(true);
+      } else {
+        updateScore();
+        setClickedIds([...clickedIds, id]);
+        shuffleCards(pokemons);
+      }
     } else {
-      alert("game reset!");
+      updateHighestScore(clickedIds.length);
+      gameReset(false);
     }
   }
 
