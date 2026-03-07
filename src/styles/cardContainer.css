@@ -2,11 +2,8 @@
 
 .card-container {
   font-family: "Press Start 2P", system-ui;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 45px 30px;
   grid-auto-flow: row;
-  border: 1px solid white;
 }

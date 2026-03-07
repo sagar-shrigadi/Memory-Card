@@ -5,8 +5,8 @@ export default function Card({ pokemon, handleClick }) {
       <img
         alt={`${pokemon.name}'s Official Artwork`}
         src={pokemon.pic}
-        width={275}
-        height={275}
+        width={225}
+        height={225}
         className="pokemon-img"
       ></img>
       <h2 className="pokemon-name">{pokemon.name}</h2>
