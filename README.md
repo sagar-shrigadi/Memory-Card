@@ -6,6 +6,7 @@ Used [PokeAPI](https://pokeapi.co/) to fetch data to display as cards.
 ## 🔗 Links and 📸 Preview
 
 - **Live Demo:** [View The Live Site](https://memory-card-k9w.pages.dev/)
+
   ![Memory Card Game Screenshot](./public/Live-Site_Preview.png)
 
 ## 🎮 How to Play
