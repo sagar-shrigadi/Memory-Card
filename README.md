@@ -1,16 +1,31 @@
-# React + Vite
+# 🃏 Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based game to test your memory!
+Used [PokeAPI](https://pokeapi.co/) to fetch data to display as cards.
 
-Currently, two official plugins are available:
+## 🔗 Links and 📸 Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Live Demo:** [View The Live Site](https://memory-card-k9w.pages.dev/)
+  ![Memory Card Game Screenshot](./public/Live-Site_Preview.png)
 
-## React Compiler
+## 🎮 How to Play
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. The game displays a set of Pokémon cards.
+2. Click on a card to earn a point.
+3. After every click, the cards will **shuffle** their order.
+4. **The Catch:** Do not click the same card twice! If you do, your score resets to zero.
+5. Try to reach the maximum score by clicking every card exactly once.
 
-## Expanding the ESLint configuration
+## 🧠 What I Learned
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **`useEffect`**: Handled side effects like fetching data from the [PokeAPI](https://pokeapi.co/) on component mount.
+- **Shuffling Logic**: Implemented Fisher-Yates shuffle algorithm to randomize card positions after every click.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + Vite
+- **Styling:** CSS3
+- **Data Source:** [PokeAPI](https://pokeapi.co/)
+- **Deployment:** [Cloudfare Pages](https://pages.cloudflare.com/)
+
+---
