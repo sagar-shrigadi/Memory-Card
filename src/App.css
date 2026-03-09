@@ -4,3 +4,10 @@
   padding-block: 2rem;
   text-align: center;
 }
+
+@media (max-width: 632px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+}

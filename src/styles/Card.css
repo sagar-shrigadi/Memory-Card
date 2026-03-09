@@ -7,10 +7,7 @@
   justify-content: space-around;
   gap: 1.5rem;
   background-color: var(--card-bg);
-  border: 1px solid hsl(from var(--inset) h s 20%);
-  box-shadow:
-    inset -10px 10px 5px -1px var(--inset),
-    inset 10px -10px 5px -1px var(--inset);
+  border: 3px solid hsl(from var(--inset) h s 25%);
   max-width: clamp(17.1875rem, 15.5571rem + 8.1522vw, 21.875rem);
   min-height: 400px;
   padding: 0.675rem 0.5rem;
